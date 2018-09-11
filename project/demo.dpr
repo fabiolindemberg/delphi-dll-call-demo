@@ -15,23 +15,50 @@ uses
   Classes,
   uCustomForm in '..\src\uCustomForm.pas' {Form2};
 
+Type
+  // Class singleton that can manage databaseconnections for exemple
+  TmyClass = class
+  private
+    class var _self : TMyClass;
+    constructor Create;
+  public
+    class function getInstance():TMyClass;
+    procedure openASingleForm;
+  end;
+
 {$R *.res}
 
-function soma(): Double;
+
+procedure aDllProcedure();
 begin
-  result := 1 + 2;
+  TmyClass.getInstance.openASingleForm;
 end;
 
-procedure abreForm();
+exports aDllProcedure;
+
+{ TmyClass }
+
+procedure TmyClass.openASingleForm;
 var
   form : TCustomForm;
 begin
+
   form := TCustomForm.Create(nil);
   form.ShowModal;
-
+  form.Free;;
 end;
 
-exports soma, abreForm;
+constructor TmyClass.Create;
+begin
+end;
+
+class function TmyClass.getInstance: TMyClass;
+begin
+  if _self = nil then
+    _self := self.Create
+  else
+    result := _self;
+end;
 
 begin
 
