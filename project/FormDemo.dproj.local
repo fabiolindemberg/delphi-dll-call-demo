@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2018/09/11 11:41:32.190.pas,D:\Users\fabio.lindemberg.WPD\Documents\RAD Studio\Projects\Unit1.pas=D:\Users\fabio.lindemberg.WPD\Documents\RAD Studio\delphi-dll-call-demo\src\main.pas</Transaction>
+    <Transaction>2018/09/11 11:41:32.190.dfm,D:\Users\fabio.lindemberg.WPD\Documents\RAD Studio\Projects\Unit1.dfm=D:\Users\fabio.lindemberg.WPD\Documents\RAD Studio\delphi-dll-call-demo\src\main.dfm</Transaction>
+    <Transaction>2018/09/11 11:41:54.632.dproj,D:\Users\fabio.lindemberg.WPD\Documents\RAD Studio\Projects\Project1.dproj=D:\Users\fabio.lindemberg.WPD\Documents\RAD Studio\delphi-dll-call-demo\project\FormDemo.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

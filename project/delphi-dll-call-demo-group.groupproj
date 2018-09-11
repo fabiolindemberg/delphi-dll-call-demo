@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{638F123A-41A6-4BD1-AE07-E4CE31452534}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="FormDemo.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="demo.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="FormDemo">
+			<MSBuild Projects="FormDemo.dproj"/>
+		</Target>
+		<Target Name="FormDemo:Clean">
+			<MSBuild Targets="Clean" Projects="FormDemo.dproj"/>
+		</Target>
+		<Target Name="FormDemo:Make">
+			<MSBuild Targets="Make" Projects="FormDemo.dproj"/>
+		</Target>
+		<Target Name="demo">
+			<MSBuild Projects="demo.dproj"/>
+		</Target>
+		<Target Name="demo:Clean">
+			<MSBuild Targets="Clean" Projects="demo.dproj"/>
+		</Target>
+		<Target Name="demo:Make">
+			<MSBuild Targets="Make" Projects="demo.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="FormDemo;demo"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="FormDemo:Clean;demo:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="FormDemo:Make;demo:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>
